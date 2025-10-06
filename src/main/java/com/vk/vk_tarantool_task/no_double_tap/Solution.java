@@ -51,6 +51,7 @@ public class Solution {
 
         // =======Решение=======
         int result = 0;
+        int K = 0;
         List<Point> currPoints = positions.get(S[0]);
         List<Point> nextPoints = new ArrayList<>();
         for (int i = 0; i < sLen - 1; i++) {
@@ -64,11 +65,12 @@ public class Solution {
                 return;
             }
             result+=symbol;
+            K+=1;
 
             currPoints = possiblePoints;
         }
         result+=S[sLen - 1];
-        System.out.println("Answer: " + (sLen - 1)*result);
+        System.out.println("Answer: " + K*result);
 
 
 
@@ -99,7 +101,7 @@ public class Solution {
         for(Point startP : startPoints) {
             for(Point endP : endPoints) {
                 for (int i = 0; i < dx.length; i++) {
-                    if (endP.x == startP.x + dx[i] && endP.y ==startP.y + dy[i]) {
+                    if (endP.x == startP.x + dx[i] && endP.y == startP.y + dy[i]) {
                         result.add(endP);
                     }
                 }
