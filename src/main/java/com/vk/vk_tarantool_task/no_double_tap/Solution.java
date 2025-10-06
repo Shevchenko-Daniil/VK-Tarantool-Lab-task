@@ -1,12 +1,12 @@
-package com.vk.vk_tarantool_task;
+package com.vk.vk_tarantool_task.no_double_tap;
 
 import java.util.*;
 
 public class Solution {
 
 
-    final static int[] dx = {0, -2, -2, -1, -1, 1, 1, 2, 2};
-    final static int[] dy = {0, -1, 1, -2, 2, -2, 2, -1, 1};
+    final static int[] dx = {-2, -2, -1, -1, 1, 1, 2, 2};
+    final static int[] dy = {-1, 1, -2, 2, -2, 2, -1, 1};
 
     public static void main(String[] args){
 
@@ -53,7 +53,6 @@ public class Solution {
 
 
         // =======Решение=======
-        Queue<Integer> phoneQueue = new LinkedList<>();
         int result = 0;
         List<Point> currPoints = positions.get(S[0]);
         List<Point> nextPoints = positions.get(S[1]);
@@ -70,8 +69,6 @@ public class Solution {
             result+=symbol;
 
             currPoints = possiblePoints;
-            //Queue<Point> queue = new LinkedList<>(positions.get(symbol));
-            // while (!queue.isEmpty()) {}
         }
         result+=S[sLen - 1];
         System.out.println("Answer: " + (sLen - 1)*result);
