@@ -70,7 +70,8 @@ public class Solution {
             currPoints = possiblePoints;
         }
         result+=S[sLen - 1];
-        System.out.println("Answer: " + K*result);
+        System.out.println("=======Answer=======");
+        System.out.print("K: " + K + "\nC: " + K*result);
 
 
 
