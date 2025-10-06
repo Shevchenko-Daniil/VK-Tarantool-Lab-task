@@ -5,9 +5,6 @@ import java.util.*;
 public class Solution {
 
 
-    final static int[] dx = {-2, -2, -1, -1, 1, 1, 2, 2};
-    final static int[] dy = {-1, 1, -2, 2, -2, 2, -1, 1};
-
     public static void main(String[] args){
 
         // =======Предварительная инициализация=======
@@ -55,7 +52,7 @@ public class Solution {
         // =======Решение=======
         int result = 0;
         List<Point> currPoints = positions.get(S[0]);
-        List<Point> nextPoints = positions.get(S[1]);
+        List<Point> nextPoints = new ArrayList<>();
         for (int i = 0; i < sLen - 1; i++) {
             int symbol = S[i];
 
@@ -94,6 +91,11 @@ public class Solution {
 
     private static List<Point> possiblePoints(List<Point> startPoints, List<Point> endPoints){
         List<Point> result = new ArrayList<>();
+
+        //возможные ходы коня
+        int[] dx = {-2, -2, -1, -1, 1, 1, 2, 2};
+        int[] dy = {-1, 1, -2, 2, -2, 2, -1, 1};
+
         for(Point startP : startPoints) {
             for(Point endP : endPoints) {
                 for (int i = 0; i < dx.length; i++) {
