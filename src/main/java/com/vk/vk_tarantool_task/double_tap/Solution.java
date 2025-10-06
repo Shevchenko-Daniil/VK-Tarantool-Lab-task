@@ -76,7 +76,7 @@ public class Solution {
             int symbol = S[i];
 
             // Если следующая цифра в номере такая же, то сначала проверяем кейс, чтобы остаться на той же позиции
-            if (S[i+1] == symbol && (zeroLevels.empty() || i != lastCheckedLevel)) {
+            if (S[i+1] == symbol && i != lastCheckedLevel) {
                 zeroLevels.push(i);
                 zeroLevelsPoints.push(currPoints);
                 continue;
