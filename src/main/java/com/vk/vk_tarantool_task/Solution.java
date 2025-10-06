@@ -55,10 +55,12 @@ public class Solution {
         // =======Решение=======
         Queue<Integer> phoneQueue = new LinkedList<>();
         int result = 0;
+        List<Point> currPoints = positions.get(S[0]);
+        List<Point> nextPoints = positions.get(S[1]);
         for (int i = 0; i < sLen - 1; i++) {
             int symbol = S[i];
-            List<Point> currPoints = positions.get(symbol);
-            List<Point> nextPoints = positions.get(S[i+1]);
+
+            nextPoints = positions.get(S[i + 1]);
 
             List<Point> possiblePoints = possiblePoints(currPoints, nextPoints);
             if(possiblePoints.isEmpty()){
@@ -67,11 +69,12 @@ public class Solution {
             }
             result+=symbol;
 
-            Queue<Point> queue = new LinkedList<>(positions.get(symbol));
+            currPoints = possiblePoints;
+            //Queue<Point> queue = new LinkedList<>(positions.get(symbol));
             // while (!queue.isEmpty()) {}
         }
         result+=S[sLen - 1];
-        System.out.println("Answer: " + result);
+        System.out.println("Answer: " + (sLen - 1)*result);
 
 
 
